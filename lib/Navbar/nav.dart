@@ -1,10 +1,10 @@
 import 'dart:js';
 import 'package:flutter/material.dart';
 import 'responsive.dart';
+import 'globals.dart' as global;
 
 class nav extends StatefulWidget {
   nav({Key? key}) : super(key: key);
-
   @override
   _navState createState() => _navState();
 }
@@ -13,7 +13,7 @@ class _navState extends State<nav> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(100, 30, 100, 0),
+      margin: EdgeInsets.fromLTRB(50, 20, 50, 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -90,10 +90,15 @@ Widget last_w() {
 }
 
 Widget mobile_menu() {
-  return Container(
-    child: Icon(
-      Icons.menu,
-      color: Colors.white,
+  return GestureDetector(
+    onTap: () {
+      global.key.currentState!.openDrawer();
+    },
+    child: Container(
+      child: Icon(
+        Icons.menu,
+        color: Colors.white,
+      ),
     ),
   );
 }
