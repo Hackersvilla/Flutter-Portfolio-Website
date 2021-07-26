@@ -45,28 +45,28 @@ Widget middle_w() {
           margin: EdgeInsets.only(right: 25),
           child: Text(
             "Home",
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.white70),
           ),
         ),
         Container(
           margin: EdgeInsets.only(right: 25),
           child: Text(
             "Blogs",
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.white70),
           ),
         ),
         Container(
           margin: EdgeInsets.only(right: 25),
           child: Text(
             "Projects",
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.white70),
           ),
         ),
         Container(
           margin: EdgeInsets.only(right: 25),
           child: Text(
             "Services",
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.white70),
           ),
         )
       ],

@@ -35,6 +35,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawerEnableOpenDragGesture: false,
       key: global.key,
       drawer: isMobile(context) ? HamburgerMenu() : null,
       backgroundColor: Colors.black,
