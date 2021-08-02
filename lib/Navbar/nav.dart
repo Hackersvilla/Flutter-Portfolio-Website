@@ -83,7 +83,7 @@ Widget last_w() {
         height: 40,
         child: Center(
             child: Text(
-          "Contact Me",
+          "Email Me",
           style: TextStyle(fontSize: 13),
         )),
       ));
