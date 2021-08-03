@@ -48,14 +48,19 @@ Widget second_wid() {
 }
 
 Widget button_wid() {
-  return Container(
-    width: 100,
-    height: 50,
-    decoration: BoxDecoration(
-        color: Colors.green[300], borderRadius: BorderRadius.circular(30)),
-    child: Icon(
-      Icons.arrow_forward,
-      color: Colors.black,
+  return MouseRegion(
+    cursor: SystemMouseCursors.click,
+    child: GestureDetector(
+      child: Container(
+        width: 100,
+        height: 50,
+        decoration: BoxDecoration(
+            color: Colors.green[300], borderRadius: BorderRadius.circular(30)),
+        child: Icon(
+          Icons.arrow_forward,
+          color: Colors.black,
+        ),
+      ),
     ),
   );
 }

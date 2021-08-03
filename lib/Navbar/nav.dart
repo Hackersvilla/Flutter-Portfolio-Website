@@ -42,32 +42,52 @@ Widget middle_w() {
   return Container(
     child: Row(
       children: [
-        Container(
-          margin: EdgeInsets.only(right: 25),
-          child: Text(
-            "Home",
-            style: TextStyle(color: Colors.white70),
-          ),
-        ).showCursoronHover,
-        Container(
-          margin: EdgeInsets.only(right: 25),
-          child: Text(
-            "Blogs",
-            style: TextStyle(color: Colors.white70),
+        MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: GestureDetector(
+            child: Container(
+              margin: EdgeInsets.only(right: 25),
+              child: Text(
+                "Home",
+                style: TextStyle(color: Colors.white70),
+              ),
+            ),
           ),
         ),
-        Container(
-          margin: EdgeInsets.only(right: 25),
-          child: Text(
-            "Projects",
-            style: TextStyle(color: Colors.white70),
+        MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: GestureDetector(
+            child: Container(
+              margin: EdgeInsets.only(right: 25),
+              child: Text(
+                "Blogs",
+                style: TextStyle(color: Colors.white70),
+              ),
+            ),
           ),
         ),
-        Container(
-          margin: EdgeInsets.only(right: 25),
-          child: Text(
-            "Services",
-            style: TextStyle(color: Colors.white70),
+        MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: GestureDetector(
+            child: Container(
+              margin: EdgeInsets.only(right: 25),
+              child: Text(
+                "Projects",
+                style: TextStyle(color: Colors.white70),
+              ),
+            ),
+          ),
+        ),
+        MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: GestureDetector(
+            child: Container(
+              margin: EdgeInsets.only(right: 25),
+              child: Text(
+                "Services",
+                style: TextStyle(color: Colors.white70),
+              ),
+            ),
           ),
         )
       ],
@@ -76,18 +96,24 @@ Widget middle_w() {
 }
 
 Widget last_w() {
-  return Container(
-      decoration: BoxDecoration(
-          color: Colors.green[300], borderRadius: BorderRadius.circular(10)),
+  return MouseRegion(
+    cursor: SystemMouseCursors.click,
+    child: GestureDetector(
       child: Container(
-        width: 100,
-        height: 40,
-        child: Center(
-            child: Text(
-          "Email Me",
-          style: TextStyle(fontSize: 13),
-        )),
-      ));
+          decoration: BoxDecoration(
+              color: Colors.green[300],
+              borderRadius: BorderRadius.circular(10)),
+          child: Container(
+            width: 100,
+            height: 40,
+            child: Center(
+                child: Text(
+              "Email Me",
+              style: TextStyle(fontSize: 13),
+            )),
+          )),
+    ),
+  );
 }
 
 Widget mobile_menu() {
