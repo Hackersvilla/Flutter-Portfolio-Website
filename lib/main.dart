@@ -4,6 +4,7 @@ import 'Navbar/nav.dart';
 import 'Navbar/responsive.dart';
 import 'Navbar/hamburger_menu.dart';
 import 'Navbar/globals.dart' as global;
+import 'Header/header.dart';
 
 void main() {
   runApp(MyApp());
@@ -39,8 +40,16 @@ class _HomePageState extends State<HomePage> {
       key: global.key,
       drawer: isMobile(context) ? HamburgerMenu() : null,
       backgroundColor: Colors.black,
-      body: Column(
-        children: [nav()],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            nav(),
+            SizedBox(
+              height: 150,
+            ),
+            Header()
+          ],
+        ),
       ),
     );
   }

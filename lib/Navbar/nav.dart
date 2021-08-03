@@ -2,6 +2,7 @@ import 'dart:js';
 import 'package:flutter/material.dart';
 import 'responsive.dart';
 import 'globals.dart' as global;
+import 'package:portfolio_website/Exten/hover_exten.dart';
 
 class nav extends StatefulWidget {
   nav({Key? key}) : super(key: key);
@@ -47,7 +48,7 @@ Widget middle_w() {
             "Home",
             style: TextStyle(color: Colors.white70),
           ),
-        ),
+        ).showCursoronHover,
         Container(
           margin: EdgeInsets.only(right: 25),
           child: Text(
