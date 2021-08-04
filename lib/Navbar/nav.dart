@@ -1,5 +1,6 @@
 import 'dart:js';
 import 'package:flutter/material.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 import 'responsive.dart';
 import 'globals.dart' as global;
 import 'package:portfolio_website/Exten/hover_exten.dart';
@@ -93,8 +94,7 @@ Widget middle_w(BuildContext context) {
           cursor: SystemMouseCursors.click,
           child: GestureDetector(
             onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Blogs()));
+              _blog_click();
             },
             child: Container(
               margin: EdgeInsets.only(right: 25),
@@ -146,4 +146,9 @@ Widget mobile_menu() {
       ),
     ),
   );
+}
+
+Future _blog_click() async {
+  await global.controller
+      .scrollToIndex(2, preferPosition: AutoScrollPosition.begin);
 }

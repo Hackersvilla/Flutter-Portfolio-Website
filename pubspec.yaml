@@ -39,6 +39,8 @@ dependencies:
 
   universal_html: ^2.0.8
 
+  scroll_to_index: ^2.0.0
+
  
 
 dev_dependencies:
