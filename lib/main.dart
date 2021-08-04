@@ -41,21 +41,21 @@ class _HomePageState extends State<HomePage> {
       key: global.key,
       drawer: isMobile(context) ? HamburgerMenu() : null,
       backgroundColor: Colors.black,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            nav(),
-            SizedBox(
-              height: 150,
-            ),
-            Header(),
-            SizedBox(
-              height: 155,
-            ),
-            Blogs()
-          ],
-        ),
-      ),
+      body: Container(
+          margin: EdgeInsets.only(bottom: 30),
+          child: ListView(
+            children: [
+              nav(),
+              SizedBox(
+                height: 150,
+              ),
+              Header(),
+              SizedBox(
+                height: 155,
+              ),
+              Blogs()
+            ],
+          )),
     );
   }
 }
