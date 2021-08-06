@@ -1,10 +1,8 @@
 import 'dart:js';
 import 'package:flutter/material.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
-import 'responsive.dart';
 import 'globals.dart' as global;
-import 'package:portfolio_website/Exten/hover_exten.dart';
-import 'package:portfolio_website/Blogs/blog.dart';
+import 'responsive.dart';
 
 class nav extends StatefulWidget {
   nav({Key? key}) : super(key: key);
@@ -26,129 +24,81 @@ class _navState extends State<nav> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           //for logo
-          logo_w(),
-          if (!isMobile(context)) middle_w(context),
-          if (!isMobile(context))
-            MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: GestureDetector(
+          !isMobile(context) ? web_logo_cont() : mobile_logo_cont(),
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
                 onTap: () {
                   setState(() {
                     is_clicked = true;
-                    animated_border_radius = 180;
+                    !isMobile(context)
+                        ? animated_border_radius = 180
+                        : animated_border_radius = 350;
                     animated_width = 40;
                   });
                 },
-                child: AnimatedContainer(
-                  duration: Duration(seconds: 2),
-                  width: animated_width,
-                  height: animated_height,
-                  decoration: BoxDecoration(
-                      color: Colors.green[300],
-                      borderRadius:
-                          BorderRadius.circular(animated_border_radius)),
-                  child: Center(
-                    child: is_clicked
-                        ? Icon(Icons.email)
-                        : Text(
-                            "Email Me",
-                            style: TextStyle(fontSize: 13),
-                          ),
-                  ),
-                ),
-              ),
-            ),
-          if (isMobile(context)) mobile_menu(),
+                child: !isMobile(context) ? web_anim_cont() : mob_anim_cont()),
+          )
         ],
       ),
     );
   }
 }
 
-Widget logo_w() {
+Widget web_anim_cont() {
+  return AnimatedContainer(
+    duration: Duration(seconds: 2),
+    width: animated_width,
+    height: animated_height,
+    decoration: BoxDecoration(
+        color: Colors.green[300],
+        borderRadius: BorderRadius.circular(animated_border_radius)),
+    child: Center(
+      child: is_clicked
+          ? Icon(Icons.email)
+          : Text(
+              "Email Me",
+              style: TextStyle(fontSize: 13),
+            ),
+    ),
+  );
+}
+
+Widget mob_anim_cont() {
+  return AnimatedContainer(
+    duration: Duration(seconds: 2),
+    width: 60,
+    height: 40,
+    decoration: BoxDecoration(
+        color: Colors.green[300],
+        borderRadius: BorderRadius.circular(animated_border_radius)),
+    child: Center(
+      child: is_clicked
+          ? Icon(Icons.email)
+          : Text(
+              "Email Me",
+              style: TextStyle(fontSize: 10),
+            ),
+    ),
+  );
+}
+
+Widget web_logo_cont() {
   return Container(
     child: Text(
-      "HS",
-      style: TextStyle(color: Colors.white, fontSize: 20.0),
+      "Harvinder Singh",
+      style: TextStyle(
+          color: Colors.white, fontSize: 20, fontWeight: FontWeight.w700),
     ),
   );
 }
 
-Widget middle_w(BuildContext context) {
+Widget mobile_logo_cont() {
   return Container(
-    child: Row(
-      children: [
-        MouseRegion(
-          cursor: SystemMouseCursors.click,
-          child: GestureDetector(
-            child: Container(
-              margin: EdgeInsets.only(right: 25),
-              child: Text(
-                "Home",
-                style: TextStyle(color: Colors.white70),
-              ),
-            ),
-          ),
-        ),
-        MouseRegion(
-          cursor: SystemMouseCursors.click,
-          child: GestureDetector(
-            onTap: () {
-              _blog_click();
-            },
-            child: Container(
-              margin: EdgeInsets.only(right: 25),
-              child: Text(
-                "Blogs",
-                style: TextStyle(color: Colors.white70),
-              ),
-            ),
-          ),
-        ),
-        MouseRegion(
-          cursor: SystemMouseCursors.click,
-          child: GestureDetector(
-            child: Container(
-              margin: EdgeInsets.only(right: 25),
-              child: Text(
-                "Projects",
-                style: TextStyle(color: Colors.white70),
-              ),
-            ),
-          ),
-        ),
-        MouseRegion(
-          cursor: SystemMouseCursors.click,
-          child: GestureDetector(
-            child: Container(
-              margin: EdgeInsets.only(right: 25),
-              child: Text(
-                "Services",
-                style: TextStyle(color: Colors.white70),
-              ),
-            ),
-          ),
-        )
-      ],
+    child: Text(
+      "Harvinder Singh",
+      style: TextStyle(
+          color: Colors.white, fontSize: 15, fontWeight: FontWeight.w700),
     ),
   );
-}
-
-Widget mobile_menu() {
-  return GestureDetector(
-    onTap: () {
-      global.key.currentState!.openDrawer();
-    },
-    child: Container(
-      child: Icon(
-        Icons.menu,
-        color: Colors.white,
-      ),
-    ),
-  );
-}
-
-Future _blog_click() async {
-  await global.controller
-      .scrollToIndex(2, preferPosition: AutoScrollPosition.begin);
 }

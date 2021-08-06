@@ -27,7 +27,6 @@ class _BlogsState extends State<Blogs> {
               scrollDirection: Axis.horizontal,
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     main_blog(),
                     main_blog(),
