@@ -6,6 +6,7 @@ import 'Navbar/hamburger_menu.dart';
 import 'Navbar/globals.dart' as global;
 import 'Header/header.dart';
 import 'Blogs/blog.dart';
+import 'Projects/project.dart';
 
 void main() {
   runApp(MyApp());
@@ -57,7 +58,11 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(
                         height: 155,
                       ),
-                      Blogs()
+                      Blogs(),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Projects()
                     ],
                   ),
                 ),
