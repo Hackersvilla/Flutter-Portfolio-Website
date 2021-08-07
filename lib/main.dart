@@ -7,6 +7,7 @@ import 'Navbar/globals.dart' as global;
 import 'Header/header.dart';
 import 'Blogs/blog.dart';
 import 'Projects/project.dart';
+import 'About/about.dart';
 
 void main() {
   runApp(MyApp());
@@ -57,6 +58,10 @@ class _HomePageState extends State<HomePage> {
                       Header(),
                       SizedBox(
                         height: 155,
+                      ),
+                      About(),
+                      SizedBox(
+                        height: 100,
                       ),
                       Blogs(),
                       SizedBox(

@@ -18,7 +18,7 @@ class _BlogsState extends State<Blogs> {
         children: [
           blog_text(),
           SizedBox(
-            height: 30,
+            height: 0,
           ),
           Container(
             width: 1500,
@@ -47,7 +47,8 @@ Widget blog_text() {
   return Container(
     child: Text(
       "Blogs",
-      style: TextStyle(color: Colors.white70, fontSize: 30),
+      style: TextStyle(
+          color: Colors.white70, fontSize: 30, fontWeight: FontWeight.w900),
     ),
   );
 }
