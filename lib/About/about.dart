@@ -37,7 +37,7 @@ Widget about_text() {
 
 Widget about_desc() {
   return Container(
-      margin: EdgeInsets.fromLTRB(50, 0, 0, 50),
+      margin: EdgeInsets.fromLTRB(50, 0, 50, 0),
       width: 600,
       child: Text(
         str,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/main.dart';
+import 'package:portfolio_website/Navbar/responsive.dart';
 
 class Blogs extends StatefulWidget {
   Blogs({Key? key}) : super(key: key);
@@ -20,27 +21,56 @@ class _BlogsState extends State<Blogs> {
           SizedBox(
             height: 0,
           ),
-          Container(
-            width: 1500,
-            height: 550,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: [
-                Row(
-                  children: [
-                    main_blog(),
-                    main_blog(),
-                    main_blog(),
-                    main_blog(),
-                  ],
-                ),
-              ],
-            ),
-          )
+          if (!isMobile(context) && !isTablet(context))
+            web_blog()
+          else
+            mobile_blog(),
         ],
       ),
     );
   }
+}
+
+Widget web_blog() {
+  return Container(
+    margin: EdgeInsets.fromLTRB(200, 0, 0, 0),
+    width: 1500,
+    height: 550,
+    child: ListView(
+      scrollDirection: Axis.horizontal,
+      children: [
+        Row(
+          children: [
+            main_blog(),
+            main_blog(),
+            main_blog(),
+            main_blog(),
+          ],
+        ),
+      ],
+    ),
+  );
+}
+
+Widget mobile_blog() {
+  return Container(
+    margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+    width: 1500,
+    height: 550,
+    child: ListView(
+      scrollDirection: Axis.horizontal,
+      children: [
+        Row(
+          children: [
+            main_blog(),
+            main_blog(),
+            main_blog(),
+            main_blog(),
+          ],
+        ),
+      ],
+    ),
+  );
 }
 
 Widget blog_text() {
