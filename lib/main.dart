@@ -8,6 +8,7 @@ import 'Header/header.dart';
 import 'Blogs/blog.dart';
 import 'Projects/project.dart';
 import 'About/about.dart';
+import 'Skills/skills.dart';
 
 void main() {
   runApp(MyApp());
@@ -67,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(
                         height: 15,
                       ),
-                      Projects()
+                      Skills()
                     ],
                   ),
                 ),
