@@ -54,20 +54,15 @@ Widget web_blog() {
 
 Widget mobile_blog() {
   return Container(
-    margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+    margin: EdgeInsets.fromLTRB(230, 0, 230, 0),
     width: 1500,
     height: 550,
     child: ListView(
       scrollDirection: Axis.horizontal,
       children: [
         Row(
-          children: [
-            main_blog(),
-            main_blog(),
-            main_blog(),
-            main_blog(),
-          ],
-        ),
+          children: [main_blog()],
+        )
       ],
     ),
   );
@@ -104,54 +99,51 @@ Widget main_blog() {
 }
 
 Widget make_blog() {
-  return Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: Container(
-      width: 250,
-      height: 350,
-      decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(50)),
-      child: Column(
-        children: [
-          Container(
-            child: Image.asset(
-              'assest/Post.png',
-              height: 190,
-              width: 200,
-            ),
+  return Container(
+    width: 250,
+    height: 350,
+    decoration: BoxDecoration(
+        color: Colors.white, borderRadius: BorderRadius.circular(50)),
+    child: Column(
+      children: [
+        Container(
+          child: Image.asset(
+            'assest/Post.png',
+            height: 190,
+            width: 200,
           ),
-          Stack(
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                    color: Colors.green[300],
-                    borderRadius: BorderRadius.circular(50)),
-                width: 250,
-                height: 160,
+        ),
+        Stack(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                  color: Colors.green[300],
+                  borderRadius: BorderRadius.circular(50)),
+              width: 250,
+              height: 160,
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(60, 8, 50, 0),
+              child: Column(
+                children: [
+                  Container(
+                    child: Text(
+                      "Top 5 Skills To Know In 2021",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                    ),
+                  )
+                ],
               ),
-              Container(
-                margin: EdgeInsets.fromLTRB(60, 8, 50, 0),
-                child: Column(
-                  children: [
-                    Container(
-                      child: Text(
-                        "Top 5 Skills To Know In 2021",
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.w600),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.fromLTRB(30, 70, 20, 0),
-                child: Text(
-                    "The Top 5 SKills You Require To Make Some Money Online"),
-              ),
-            ],
-          )
-        ],
-      ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(30, 70, 20, 0),
+              child: Text(
+                  "The Top 5 SKills You Require To Make Some Money Online"),
+            ),
+          ],
+        )
+      ],
     ),
   );
 }
