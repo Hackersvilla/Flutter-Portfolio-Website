@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:portfolio_website/Navbar/responsive.dart';
 
 class Skills extends StatefulWidget {
   Skills({Key? key}) : super(key: key);
@@ -15,9 +16,12 @@ class _SkillsState extends State<Skills> {
       children: [
         skill_text(),
         SizedBox(
-          height: 100,
+          height: 30,
         ),
-        skill_indigator()
+        if (!isMobile(context) && !isTablet(context))
+          web_skill_indigator()
+        else
+          mobile_skill_indigator(),
       ],
     );
   }
@@ -33,9 +37,32 @@ Widget skill_text() {
   );
 }
 
-Widget skill_indigator() {
+Widget web_skill_indigator() {
   return Container(
     margin: EdgeInsets.fromLTRB(230, 0, 230, 0),
+    width: 1500,
+    height: 550,
+    child: ListView(
+      scrollDirection: Axis.horizontal,
+      children: [
+        Row(
+          children: [
+            skill_container(),
+            skill_container(),
+            skill_container(),
+            skill_container(),
+            skill_container(),
+            skill_container()
+          ],
+        )
+      ],
+    ),
+  );
+}
+
+Widget mobile_skill_indigator() {
+  return Container(
+    margin: EdgeInsets.fromLTRB(30, 0, 30, 0),
     width: 1500,
     height: 550,
     child: ListView(

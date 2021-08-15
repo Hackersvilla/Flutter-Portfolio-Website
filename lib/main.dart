@@ -6,9 +6,9 @@ import 'Navbar/hamburger_menu.dart';
 import 'Navbar/globals.dart' as global;
 import 'Header/header.dart';
 import 'Blogs/blog.dart';
-import 'Projects/project.dart';
 import 'About/about.dart';
 import 'Skills/skills.dart';
+import 'Social/social.dart';
 
 void main() {
   runApp(MyApp());
@@ -68,7 +68,11 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(
                         height: 15,
                       ),
-                      Skills()
+                      Skills(),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Social()
                     ],
                   ),
                 ),
