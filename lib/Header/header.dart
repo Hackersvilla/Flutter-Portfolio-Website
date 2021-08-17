@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:portfolio_website/Navbar/responsive.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Header extends StatefulWidget {
   Header({Key? key}) : super(key: key);
@@ -51,6 +52,9 @@ Widget button_wid() {
   return MouseRegion(
     cursor: SystemMouseCursors.click,
     child: GestureDetector(
+      onTap: () {
+        launch('https://github.com/Hackersvilla');
+      },
       child: Container(
         width: 100,
         height: 50,
