@@ -1,4 +1,3 @@
-import 'dart:js';
 import 'package:flutter/material.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'globals.dart' as global;
@@ -9,11 +8,6 @@ class nav extends StatefulWidget {
   @override
   _navState createState() => _navState();
 }
-
-double animated_border_radius = 10;
-double animated_width = 100;
-double animated_height = 40;
-bool is_clicked = false;
 
 class _navState extends State<nav> {
   @override
@@ -29,57 +23,43 @@ class _navState extends State<nav> {
             cursor: SystemMouseCursors.click,
             child: GestureDetector(
                 onTap: () {
-                  setState(() {
-                    is_clicked = true;
-                    !isMobile(context)
-                        ? animated_border_radius = 180
-                        : animated_border_radius = 350;
-                    animated_width = 40;
-                  });
+                  email_container();
                 },
                 child: !isMobile(context) ? web_anim_cont() : mob_anim_cont()),
-          )
+          ),
         ],
       ),
     );
   }
 }
 
-Widget web_anim_cont() {
-  return AnimatedContainer(
-    duration: Duration(seconds: 2),
-    width: animated_width,
-    height: animated_height,
+Widget email_container() {
+  return Container(
+    width: 100,
+    height: 40,
     decoration: BoxDecoration(
-        color: Colors.green[300],
-        borderRadius: BorderRadius.circular(animated_border_radius)),
-    child: Center(
-      child: is_clicked
-          ? Icon(Icons.email)
-          : Text(
-              "Email Me",
-              style: TextStyle(fontSize: 13),
-            ),
-    ),
+        color: Colors.white, borderRadius: BorderRadius.circular(20)),
+    child: null,
+  );
+}
+
+Widget web_anim_cont() {
+  return Container(
+    width: 60,
+    height: 40,
+    decoration: BoxDecoration(
+        color: Colors.green[300], borderRadius: BorderRadius.circular(50)),
+    child: Center(child: Icon(Icons.email)),
   );
 }
 
 Widget mob_anim_cont() {
-  return AnimatedContainer(
-    duration: Duration(seconds: 2),
+  return Container(
     width: 60,
     height: 40,
     decoration: BoxDecoration(
-        color: Colors.green[300],
-        borderRadius: BorderRadius.circular(animated_border_radius)),
-    child: Center(
-      child: is_clicked
-          ? Icon(Icons.email)
-          : Text(
-              "Email Me",
-              style: TextStyle(fontSize: 10),
-            ),
-    ),
+        color: Colors.green[300], borderRadius: BorderRadius.circular(50)),
+    child: Center(child: Icon(Icons.email)),
   );
 }
 
