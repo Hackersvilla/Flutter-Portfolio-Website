@@ -23,7 +23,10 @@ class _navState extends State<nav> {
             cursor: SystemMouseCursors.click,
             child: GestureDetector(
                 onTap: () {
-                  email_container();
+                  print("Tapped");
+                  setState(() {
+                    global.isVisible = !global.isVisible;
+                  });
                 },
                 child: !isMobile(context) ? web_anim_cont() : mob_anim_cont()),
           ),
@@ -31,16 +34,6 @@ class _navState extends State<nav> {
       ),
     );
   }
-}
-
-Widget email_container() {
-  return Container(
-    width: 100,
-    height: 40,
-    decoration: BoxDecoration(
-        color: Colors.white, borderRadius: BorderRadius.circular(20)),
-    child: null,
-  );
 }
 
 Widget web_anim_cont() {

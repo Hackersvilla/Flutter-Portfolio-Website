@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_website/email_cont/Email_cont.dart';
 import 'Navbar/nav.dart';
 import 'Navbar/responsive.dart';
 import 'Navbar/hamburger_menu.dart';
@@ -49,6 +50,10 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: [
               nav(),
+              SizedBox(
+                height: 10,
+              ),
+              EmailC(),
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(

@@ -80,6 +80,7 @@ flutter:
     - assest/Post.png
     - assest/linkedin.png
     - assest/face.jpg
+    - assest/bleach.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
