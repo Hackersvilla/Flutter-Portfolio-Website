@@ -47,12 +47,14 @@ Widget web_skill_indigator() {
       children: [
         Row(
           children: [
-            skill_container(),
-            skill_container(),
-            skill_container(),
-            skill_container(),
-            skill_container(),
-            skill_container()
+            skill_container("Flutter", Colors.green[900], r"90%",
+                r"* App Devlopment", r"* Web Devlopment"),
+            skill_container("Python", Colors.orange[600], r"93%",
+                r"* Data Structures", r"* Graph Algorithms"),
+            skill_container("Graphic Designing", Colors.purple[600], r"80%",
+                r"* Logo Design", r"* Post Design"),
+            skill_container("UI/UX Design", Colors.indigo, r"75%",
+                r"* App Design", r"* Web Design"),
           ],
         )
       ],
@@ -70,12 +72,16 @@ Widget mobile_skill_indigator() {
       children: [
         Row(
           children: [
-            skill_container(),
-            skill_container(),
-            skill_container(),
-            skill_container(),
-            skill_container(),
-            skill_container()
+            skill_container("Flutter", Colors.green[900], r"90%",
+                r"* App Devlopment", r"* Web Devlopment"),
+            skill_container("Python", Colors.orange[600], r"93%",
+                r"* Data Structures", r"* Graph Algorithms"),
+            skill_container("Graphic Designing", Colors.purple[600], r"80%",
+                r"* Logo Design", r"* Post Design"),
+            skill_container("Android", Colors.pink[300], r"70%",
+                r"* Ui Devlopment", r"* Backend Devlopment"),
+            skill_container("UI/UX Design", Colors.indigo, r"75%",
+                r"* App Design", r"* Web Design"),
           ],
         )
       ],
@@ -83,7 +89,8 @@ Widget mobile_skill_indigator() {
   );
 }
 
-Widget skill_container() {
+Widget skill_container(String title, var percentcolor, String percentage,
+    String desc1, String desc2) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: Container(
@@ -97,7 +104,7 @@ Widget skill_container() {
           Container(
             margin: EdgeInsets.only(top: 20),
             child: Text(
-              "Flutter",
+              title,
               style: TextStyle(
                   color: Colors.black,
                   fontSize: 25,
@@ -114,11 +121,11 @@ Widget skill_container() {
             radius: 150.0,
             lineWidth: 12.0,
             percent: 0.9,
-            progressColor: Colors.green,
+            progressColor: percentcolor,
             animation: true,
             center: Container(
               child: Text(
-                r"90%",
+                percentage,
                 style: TextStyle(color: Colors.black, fontSize: 20),
               ),
             ),
@@ -136,7 +143,7 @@ Widget skill_container() {
               children: [
                 Container(
                   child: Text(
-                    r"* App Devlopment",
+                    desc1,
                     style: TextStyle(color: Colors.black, fontSize: 18),
                   ),
                 ),
@@ -145,7 +152,7 @@ Widget skill_container() {
                 ),
                 Container(
                   child: Text(
-                    r"* Web Devlopment",
+                    desc2,
                     style: TextStyle(color: Colors.black, fontSize: 18),
                   ),
                 ),

@@ -49,6 +49,8 @@ dependencies:
   percent_indicator: ^3.0.1
 
   url_launcher: ^6.0.9
+  eyro_toast: ^1.0.0
+  fluttertoast: ^8.0.8
 
 dev_dependencies:
   flutter_test:
@@ -74,14 +76,15 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assest/instagram.png
+   
     - assest/youtube.png
     - assest/close.png
     - assest/Post.png
     - assest/linkedin.png
     - assest/face.jpg
     - assest/bleach.png
-
+    - assest/insta-1.png
+    - assest/facebook.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
